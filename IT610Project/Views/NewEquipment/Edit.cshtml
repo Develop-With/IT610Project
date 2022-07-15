@@ -1,0 +1,143 @@
+﻿@using IT610Project.Models.NEF
+@model NewEquipment
+
+<form method="post" asp-action="Edit">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary text-light">Edit New Equipment</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="ControlNo">Control Number</label>
+			<input asp-for="ControlNo" class="form-control" data-val="True" />
+			<span asp-validation-for="ControlNo" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Serial">Serial Number</label>
+			<input asp-for="Serial" class="form-control" />
+			<span asp-validation-for="Serial" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="ModelKey">Model</label>
+@*			<select asp-for="ModelKey" class="form-control"
+			asp-items="@(new SelectList(@ViewBag.ListofModel,"ModelKey", "ModelNo"))"></select>*@
+			<input type="search" asp-for="ModelKey" class="form-control"/>
+			<span asp-validation-for="ModelKey" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="VendorKey">Vendor</label>
+			<input type="search" asp-for="VendorKey" class="form-control" />
+			<span asp-validation-for="VendorKey" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="PurchaseDate">Purchase Date</label>
+			<input type="date" asp-for="PurchaseDate"  class="form-control" />
+			<span asp-validation-for="PurchaseDate" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="PurchaseCost">Purchase Cost</label>
+			<input type="number" asp-for="PurchaseCost" class="form-control" />
+			<span asp-validation-for="PurchaseCost" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Notes">Notes</label>
+			<input type="text" asp-for="Notes" class="form-control" />
+			<span asp-validation-for="Notes" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="SystemKey">System</label>
+			<input type="search" asp-for="SystemKey" class="form-control" />
+			<span asp-validation-for="SystemKey" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EquipmentCondKey"></label>
+			<input type="search" asp-for="EquipmentCondKey" class="form-control" />
+			<span asp-validation-for="EquipmentCondKey" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EquipmentStatKey"></label>
+			<input type="search" asp-for="EquipmentStatKey" class="form-control" />
+			<span asp-validation-for="EquipmentStatKey" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="BuildingKey"></label>
+			<input type="search" asp-for="BuildingKey" class="form-control" />
+			<span asp-validation-for="BuildingKey" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="DeptCharg2Key"></label>
+			<input type="search" asp-for="DeptCharg2Key" class="form-control" />
+			<span asp-validation-for="DeptCharg2Key" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="DeptOwnerKey"></label>
+			<input type="search" asp-for="DeptOwnerKey" class="form-control" />
+			<span asp-validation-for="DeptOwnerKey" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="SoftwareRev"></label>
+			<input type="text" asp-for="SoftwareRev" class="form-control" />
+			<span asp-validation-for="SoftwareRev" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="LastLocation"></label>
+			<input type="text" asp-for="LastLocation" class="form-control" />
+			<span asp-validation-for="LastLocation" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="LocatedOn"></label>
+			<input type="date" asp-for="LocatedOn" class="form-control" />
+			<span asp-validation-for="LocatedOn" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="PurchaseOrderNo"></label>
+			<input type="text" asp-for="PurchaseOrderNo" class="form-control" />
+			<span asp-validation-for="PurchaseOrderNo" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="WarrExpireLabor"></label>
+			<input type="date" asp-for="WarrExpireLabor" class="form-control" />
+			<span asp-validation-for="WarrExpireLabor" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="WarrExpirePart"></label>
+			<input type="date" asp-for="WarrExpirePart" class="form-control" />
+			<span asp-validation-for="WarrExpirePart" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="RoomNo"></label>
+			<input type="search" asp-for="RoomNo" class="form-control" />
+			<span asp-validation-for="RoomNo" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="FloorNo"></label>
+			<input type="search" asp-for="FloorNo" class="form-control" />
+			<span asp-validation-for="FloorNo" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="InitialLoc"></label>
+			<input type="search" asp-for="InitialLoc" class="form-control" />
+			<span asp-validation-for="InitialLoc" class="text-danger"></span>
+		</div>
+@*		<div class="mb-3">
+			<label asp-for=""></label>
+			<input type="search" asp-for="" class="form-control" />
+			<span asp-validation-for="" class="text-danger"></span>
+		</div>*@
+		@*<div class="mb-3">
+			<label asp-for="ModelKey">Model</label>
+			<select asp-for="ModelKey" asp-items="" />
+		</div>*@
+		<button type="submit" value="Submit" class="btn btn-primary" style="width:150px">Update</button>
+		<a asp-controller="NewEquipment" asp-action="List" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
